@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teams2Watch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    Teams2Watch
+  </header>
+
+  <div class="controls">
+    <select id="teamSelect">
+      <option value="">All Teams</option>
+    </select>
+    <select id="matchdaySelect">
+      <option value="">All Matchdays</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Search team..." />
+    <!-- You removed toggle, so no theme button -->
+  </div>
+
+  <main>
+    <div class="matches-container" id="matchesContainer">
+      <!-- Cards will be injected here by JS -->
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
