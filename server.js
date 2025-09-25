@@ -1,25 +1,21 @@
-const express = require('express');
+/* const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
 
+// Serve static files from public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Load JSON data
 const matchesData = require('./db.json');
 
-// Serve static frontend files (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname)));
-
-// API endpoint for matches
+// API endpoint
 app.get('/api/matches', (req, res) => {
   res.json(matchesData.matches);
 });
 
-// Optional: API endpoint for league table
-app.get('/api/league', (req, res) => {
-  res.json(matchesData.league);
-});
-
-// Start the server
+// Start server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+ */

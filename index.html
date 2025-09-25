@@ -18,8 +18,8 @@
   <main>
     <section class="filters">
       <div class ="filter">
-        <label for ="teamsSelect">Select Team</label>
-        <select id="teamselect">
+        <label for ="teamSelect">Select Team</label>
+        <select id="teamSelect">
           <option value=""> Teams</option>
         </select>
       </div>
@@ -43,57 +43,47 @@
   </select>
 </section>
 
-<!-- Matchday selection (used for matches or league table) -->
-<section class="matchday-section">
-  <label for="matchdaySelect">Select Matchday:</label>
-  <select id="matchdaySelect">
-    <option value="">-- Choose Matchday --</option>
-    <option value="1">Matchday 1</option>
-    <option value="2">Matchday 2</option>
-    <option value="3">Matchday 3</option>
-  </select>
-</section>
+<!-- League Table -->
+    <section id="leagueSection" style="display:none;">
+      <h2>League Table</h2>
+      <label for="leagueMatchdaySelect">Up to Matchday:</label>
+      <select id="leagueMatchdaySelect">
+        <option value="">All</option>
+      </select>
 
-<!-- Table section -->
-<section class="matches" id="matchesSection">
+      <table id="leagueTable">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Draw</th>
+            <th>Lost</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    
+    <!-- Matches Section -->
+<section id="matchesSection" style="display:none;">
+  <h2>Matches</h2>
   <table id="matchesTable">
     <thead>
       <tr>
-        <th>Position</th>
-        <th>Team</th>
-        <th>Played</th>
-        <th>Won</th>
-        <th>Draw</th>
-        <th>Lost</th>
-        <th>Points</th>
+        <th>Date</th>
+        <th>Team 1</th>
+        <th>Team 2</th>
+        <th>Score</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Arsenal</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Chelsea</td>
-        <td>2</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>3</td>
-      </tr>
-    </tbody>
+    <tbody></tbody>
   </table>
 </section>
 
-
-     
-    </section>
   </main>
  
  
