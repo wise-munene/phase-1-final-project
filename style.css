@@ -23,8 +23,8 @@ body::before {
 
 
 header {
-  background-color: #222;
-  color: #fff;
+  background-color: #652dad;
+  color: #F6F1E1;
   text-align: center;
   padding:1rem;
   margin-bottom: 2rem;
@@ -54,6 +54,9 @@ main {
 label {
   margin-right: 0.5rem;
   font-size: 1.1rem;
+  color: #F6F1E1;    
+  font-weight: bold;    
+
 }
 
 select {
@@ -68,8 +71,8 @@ select {
   width: 80%;
   margin: 0 auto 2rem auto;
   border-collapse: collapse;
-  background-color: rgba(255,255,255,0.9);
-  color: #000;
+  background-color:#F6F1E1;
+  color:#006747;
 }
 
 .matches th, .matches td {
@@ -79,6 +82,39 @@ select {
 }
 
 
+select:hover,
+select:focus {
+  background-color: #A7D08E;
+  outline: none;
+}
+
+/* League Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #F6F1E1;
+}
+
+th {
+  background-color: #652dad;
+  color: #F6F1E1;
+  padding: 1rem;
+  text-align: left;
+}
+
+td {
+  background-color: #f8f8f6;
+  color: #486700;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+tr:nth-child(even) td {
+  background-color: #fdfdfc;
+}
+
+
+
 
 
 
@@ -86,8 +122,8 @@ select {
 footer {
   text-align: center;
   padding: 0.5rem;
-  background-color: #222;
-  color: #fff;
+  background-color:  #0c0c13;
+  color: #F6F1E1;
   margin-top: 18rem;
 }
 
