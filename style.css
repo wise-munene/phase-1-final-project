@@ -62,7 +62,7 @@ select {
   margin: 0 auto 2rem auto;
   border-collapse: collapse;
   background-color:#F6F1E1;
-  color:#006747;
+  color:#652dad;
 }
 
 .matches th, .matches td {
@@ -72,9 +72,19 @@ select {
 }
 
 
+h2{
+  color: #ddd;
+}
+
+p{
+  color: #ddd;
+  font-weight: bolder;
+}
+
+
 select:hover,
 select:focus {
-  background-color: #A7D08E;
+  background-color: #652dad;
   outline: none;
 }
 
@@ -106,9 +116,6 @@ tr:nth-child(even) td {
 
 
 
-
-
-
 footer {
   text-align: center;
   padding: 0.5rem;
@@ -116,4 +123,46 @@ footer {
   color: #F6F1E1;
   margin-top: 32rem;
 }
+
+header nav a {
+  color: #F6F1E1;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+header nav a:hover {
+  color: #A7D08E;
+}
+
+
+header {
+  background-color: #652dad;
+  color: #F6F1E1;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  position: relative; /* for absolute positioning of icons */
+}
+
+/* Header Icons Container */
+.header-icons {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.header-icons a {
+  color: #F6F1E1;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.header-icons a:hover {
+  color: peru;
+}
+
 
