@@ -166,3 +166,37 @@ header {
 }
 
 
+#resetBtn {
+  padding: 8px 15px;
+  background-color: #ddd; /* Red for attention */
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#resetBtn:hover {
+  background-color: #652dad;
+  transform: scale(1.05);
+}
+
+#resetBtn:active {
+  transform: scale(0.98);
+}
+
+
+#searchInput{
+  padding: 8px 15px;
+  background-color: #ddd; /* Red for attention */
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#searchInput:hover {
+  background-color: #652dad;
+  transform: scale(1.05);
+}

@@ -185,6 +185,29 @@ document.addEventListener('DOMContentLoaded', () => {
           leagueSection.style.display='none';
         }
       });
+
+      const resetBtn = document.getElementById('resetBtn');
+
+resetBtn.addEventListener('click', () => {
+  teamSelect.value = '';
+  matchdaySelect.value = '';
+  viewSelect.value = '';
+  matchesSection.style.display = 'none';
+  leagueSection.style.display = 'none';
+});
+
+
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+  const filtered = matches.filter(
+    m => m.team1.toLowerCase().includes(query) || m.team2.toLowerCase().includes(query)
+  );
+  displayMatches(filtered);
+});
+
+
     })
     .catch(err => {
       console.error('Failed to load data:', err);
