@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const leagueMatchdaySelect = document.getElementById('leagueMatchdaySelect');
   const leagueTableBody = document.querySelector('#leagueTable tbody');
 
-  // Hide both sections initially
+  // Hide both sections initially until the user selects an option
   matchesSection.style.display = 'none';
   leagueSection.style.display = 'none';
 
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function generateLeagueTable(matches) {
     const table = {};
 
+    //makes the strings of scores to numbers
     matches.forEach(match => {
       const { team1, team2, score } = match;
       const [goals1, goals2] = score.split('-').map(Number);
@@ -30,14 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
       table[team1].played++;
       table[team2].played++;
 
+      // increases the played count
       table[team1].gf += goals1;
       table[team1].ga += goals2;
       table[team2].gf += goals2;
       table[team2].ga += goals1;
 
+
+      //adds the goals scored and conceded in each team
       table[team1].gd = table[team1].gf - table[team1].ga;
       table[team2].gd = table[team2].gf - table[team2].ga;
 
+
+      // winner gets 3 points draw 1 point loser no points
       if (goals1 > goals2) {
         table[team1].won++; table[team2].lost++; table[team1].points += 3;
       } else if (goals1 < goals2) {
@@ -47,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // converts the table object into an array so that sorting is easier
     const leagueArray = Object.values(table);
     leagueArray.sort((a, b) => {
       if (b.points !== a.points) return b.points - a.points;
@@ -54,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return b.gf - a.gf;
     });
 
+    // assigns a position to ateam
     leagueArray.forEach((team, i) => team.position = i + 1);
     return leagueArray;
   }
@@ -63,11 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     leagueTableBody.innerHTML = '';
     let tableData = league;
 
+    // this is when the user selects to see the league table specified to a specific matchday
     if (upToDay) {
       // Recompute points only up to selected matchday
       tableData = generateLeagueTable(matches.filter(m => m.matchday <= upToDay));
     }
 
+    // league table is built
     tableData.forEach(team => {
       const tr = document.createElement('tr');
       tr.innerHTML = `
@@ -129,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       matches = data;
 
       // Prepare dropdowns
+      //matchdays- maps all matchdays values and removes duplicates and sorts numerically
       const matchdays = Array.from(new Set(matches.map(m => m.matchday))).sort((a,b) => a-b);
       const teams = Array.from(new Set(matches.flatMap(m => [m.team1, m.team2]))).sort();
 
@@ -140,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectEl.appendChild(ph);
       }
 
+      // dropdown are resseted before populating
       clearAndAddPlaceholder(teamSelect, 'All Teams');
       teams.forEach(t => {
         const o = document.createElement('option');
@@ -148,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         teamSelect.appendChild(o);
       });
 
+      // populates the dropdown for the teams
       clearAndAddPlaceholder(matchdaySelect, 'All Matchdays');
       matchdays.forEach(md => {
         const o = document.createElement('option');
@@ -156,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         matchdaySelect.appendChild(o);
       });
 
+      // populates forthe atchdays
       clearAndAddPlaceholder(leagueMatchdaySelect, 'All');
       matchdays.forEach(md => {
         const o = document.createElement('option');
@@ -207,6 +221,7 @@ searchInput.addEventListener('input', () => {
   displayMatches(filtered);
 });
 
+// error message for the user if something is not working as intended
 
     })
     .catch(err => {
